@@ -1,4 +1,5 @@
 ;;; This file contains all the stuff related to the org-mode agenda // org-mode.
+;;; Most of this is unused and some kbd are in conflict with others. It is useful sometimes.
 
 ;;; Everything goes here unless stated in a different wayy
 (setq org-default-notes-file "~/misc/misc.org")
@@ -10,6 +11,8 @@
 ;; (add-hook 'after-init-hook '(lambda () (org-agenda)))
 ;; ;;(org-agenda-list)
 ;; (delete-other-windows)
+
+(setq org-list-automatic-rules nil)
 
 ;; Open files fastttttt
 (global-set-key (kbd "C-c mc")
@@ -26,22 +29,28 @@
 ;; Open org-agenda/org-capture
 (global-set-key "\C-ca" 'org-agenda)
 
-(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cp" 'org-capture)
 
 (setq org-enforce-todo-dependencies t)
 ;; Where look for TODOs  etc
 (setq org-agenda-files '(
-			 "/Users/danieljurjo/jurjo_phd/notsh/phd.org"
-			 "/Users/danieljurjo/mfoc/mfoc.org"
-			 "/Users/danieljurjo/misc/misc.org"
-			 "/Users/danieljurjo/jurjo_phd/phd.org"
+			 "~/jurjo_phd/notsh/phd.org"
+			 "~/mfoc/mfoc.org"
+			 "~/misc/misc.org"
+			 "~/jurjo_phd/phd.org"
 			 ))
 
 (setq org-agenda-custom-commands
-      '(("c" "Simple agenda view"
-	 ((agenda "")
-	  (alltodo "")))
-      ))
+      '(("w" "Work"
+	 ((agenda "" ((org-agenda-span 1)))
+	  (tags-todo "mfoc|phd")
+          ))
+	("p" "Priority A"
+	 ((agenda "" ((org-agenda-span 1)))
+	  (tags-todo "+PRIORITY=\"A\""))
+         )
+	)
+      )
 
 
 (setq calendar-week-start-day 2
@@ -59,9 +68,9 @@
 ;; Colores de los TODO.
 ;; M-x list-colors-display!
 (setq org-todo-keyword-faces
-      '(("TODO" . "#d15fee") ;:background "dim gray" :weight bold))
-        ("NEXT" . "#cdaa7d") ;  :background "dim gray" :weight bold))
-        ("WAITING" . "#ee9a00" ) ;:background "dim gray" :weight bold))
+      '(("TODO" . "#d15fee") 
+        ("NEXT" . "#cdaa7d") 
+        ("WAITING" . "#ee9a00")
         ("CANCELED" . "#cd5c5c")
         ("DONE" . "#556B2F")
 	("DELEGATED". "4682b4")

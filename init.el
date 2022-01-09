@@ -1,39 +1,53 @@
 (require 'package)
 
+(if (file-exists-p "~/.emacs.d/emacs/files/ciao_temp.el")
+(load "~/.emacs.d/emacs/files/ciao_temp.el"))
+
 ;; Agenda + some org-mode definitions (colors)
-(load "~/jurjo/djurjo_github/emacs/files/agenda.el")
+(if (file-exists-p "~/.emacs.d/emacs/files/agenda.el")
+(load "~/.emacs.d/emacs/files/agenda.el"))
 
 ;; Mail related definition
-(load "~/jurjo/djurjo_github/emacs/files/mail.el") 
-
+(if (file-exists-p "~/.emacs.d/emacs/files/mail.el")
+(load "~/.emacs.d/emacs/files/mail.el") 
+)
 ;; List all orgs. By jfmc
-(load "~/jurjo/djurjo_github/emacs/files/org-list.el") 
+;;(load "~/.emacs.d/emacs/files/org-list.el") 
 
 ;; Mac needs
-(load "~/jurjo/djurjo_github/emacs/files/mac_things.el") 
+(if (file-exists-p "~/.emacs.d/emacs/files/mac_things.el")
+(load "~/.emacs.d/emacs/files/mac_things.el") )
 
 ;; Package archives and related things
-(load "~/jurjo/djurjo_github/emacs/files/packages.el") 
+(if (file-exists-p "~/.emacs.d/emacs/files/packages.el")
+(load "~/.emacs.d/emacs/files/packages.el") )
 
 ;; Miscellaneous
-(load "~/jurjo/djurjo_github/emacs/files/misc.el") 
+(if (file-exists-p "~/.emacs.d/emacs/files/misc.el")
+(load "~/.emacs.d/emacs/files/misc.el") )
 
 ;; Enviroment (shell/bash/zsh etc)
-(load "~/jurjo/djurjo_github/emacs/files/env.el") 
+(if (file-exists-p "~/.emacs.d/emacs/files/env.el")
+(load "~/.emacs.d/emacs/files/env.el") )
 
-;;; Custom-set variables/faces/whatever
-(load "~/jurjo/djurjo_github/emacs/files/custom-set.el") 
+;; Custom-set variables/faces/whatever
+;;;;; better don't touch this too much
+(if (file-exists-p "~/.emacs.d/emacs/files/custom-set.el")
+(load "~/.emacs.d/emacs/files/custom-set.el"))
 
-;;; Alerts/notifications
-(load "~/jurjo/djurjo_github/emacs/files/alerts.el") 
+;; Alerts/notifications
+;;; TODO: include this file once it works
+;; (if (file-exists-p "~/.emacs.d/emacs/files/alerts.el")
+;; (load "~/.emacs.d/emacs/files/alerts.el") )
 
-;;; Flyspell and flycheck (Dafny, Z3, boogie-friendss). it disabled
-;(load "/Users/danieljurjo/.emacs.d/init/flyspell_flycheck.el") 
+;; Flyspell and flycheck (Dafny, Z3, boogie-friendss). it disabled
+;; (if (file-exists-p "~/.emacs.d/init/flyspell_flycheck.el")
+;; (load "~/.emacs.d/init/flyspell_flycheck.el") 
 
 ;; Ciao
 ;; @begin(99421239)@ - Do not edit these lines - added automatically!
-(if (file-exists-p "/Users/danieljurjo/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el")
-  (load-file "/Users/danieljurjo/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el"))
+(if (file-exists-p "~/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el")
+  (load-file "~/ciao-devel/bndls/ciao_emacs/elisp/ciao-site-file.el"))
 ;; @end(99421239)@ - End of automatically added lines.;; (when (memq window-system '(mac ns))
 
 
