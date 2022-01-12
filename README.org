@@ -1,5 +1,5 @@
 * Another Emacs configuration
-  This is [[djurjo.github.io][my]] current Emacs configuration. Notice that this files are
+  This is [[https://djurjo.github.io/public/index.html][my]] current Emacs configuration. Notice that this files are
   always under construction (and destruction also) and this will not
   work in your device without some changes and extra installations.
   Anyway it can be useful as a ""guide"" in order to get some stuff
