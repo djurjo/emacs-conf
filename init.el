@@ -9,8 +9,11 @@
 
 ;; Mail related definition
 (if (file-exists-p "~/.emacs.d/emacs/files/mail.el")
-(load "~/.emacs.d/emacs/files/mail.el") 
-)
+    (load "~/.emacs.d/emacs/files/mail.el") )
+;; Telegrammm
+(if (file-exists-p "~/.emacs.d/emacs/files/telega.el")
+(load "~/.emacs.d/emacs/files/telega.el") )
+
 ;; List all orgs. By jfmc
 ;;(load "~/.emacs.d/emacs/files/org-list.el") 
 
